@@ -21,8 +21,8 @@
     width: 300px;
     height: 300px;
     object-fit: cover;
-    border: 5px solid #ff0000;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    border: 5px solid #fac72d;
+    box-shadow: 0 0 20px #fac72d;
     flex-shrink: 0; /* Impede que a imagem encolha */
 }
 
@@ -86,7 +86,7 @@
 
 .centered-title {
     text-align: center;
-    color: #ff0000;
+    color: #fac72d;
     text-transform: uppercase;
     margin-bottom: 40px;
     font-size: 2.2rem;
@@ -102,7 +102,7 @@
     background-color: #1a1a1a;
     padding: 20px;
     margin-bottom: 10px;
-    border-left: 5px solid #ff0000;
+    border-left: 5px solid #fac72d;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,7 +125,7 @@
 .view-lyrics {
     flex-basis: 15%;
     text-align: right;
-    color: #ff0000;
+    color: #fac72d;
     text-decoration: none;
     font-weight: 700;
 }

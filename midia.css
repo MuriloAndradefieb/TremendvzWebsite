@@ -1,0 +1,209 @@
+/* ========================================= */
+/* ESTILOS DA PÁGINA DE MÍDIA (midia.html) - ESTILO GALERIA IMPACTO V3 */
+/* ========================================= */
+
+#media-page {
+    padding-top: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 1. LOGO E TÍTULO CENTRALIZADOS */
+.page-logo-container {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.return-home {
+    position: absolute;
+    top: 50px;
+    left: 5%;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: opacity 0.3s;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.page-logo-style {
+    max-width: 400px; 
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 10px rgba(250, 199, 45, 0.5));
+}
+
+.page-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #fac72d;
+    letter-spacing: 0.1em;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #fff;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* ------------------ */
+/* 2. GRID DE FOTOS (ESTILO REFERÊNCIA) */
+/* ------------------ */
+.photo-grid {
+    display: grid;
+    /* 3 colunas fixas para impacto */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #000;
+    /* Remove a borda para deixar a imagem 'flutuar' */
+    border: none; 
+    transition: transform 0.3s;
+}
+
+.photo-item:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 600px; /* IMAGENS AINDA MAIS ALTAS PARA MÁXIMO IMPACTO */
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7); /* Escurece a imagem para destaque da legenda */
+    transition: filter 0.5s;
+}
+
+.photo-item:hover img {
+    filter: brightness(1); /* Clareia ao passar o mouse */
+}
+
+/* Legenda (Caption) - POSICIONADA DENTRO DA IMAGEM */
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Fundo da legenda */
+    background: rgba(0, 0, 0, 0.7); 
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    
+    /* Linha vermelha de destaque no topo (como na referência) */
+    border-top: 2px solid #ff0000; 
+    
+    /* Efeito sutil de brilho/sombra para destacar a legenda */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.caption-icon {
+    /* Ícone de Play ou destaque sutil à esquerda da legenda */
+    width: 0; 
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid #ff0000; /* Triângulo vermelho (Play) */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* ------------------ */
+/* 3. VÍDEOS LOCAIS (Mantido) */
+/* ------------------ */
+.local-video-grid {
+    display: flex; 
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.local-video-item {
+    text-align: center;
+    flex: 1 1 45%; 
+    min-width: 300px;
+}
+
+.local-video-item video {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    display: block;
+    border: 4px solid #fac72d;
+    box-shadow: 0 0 15px rgba(250, 199, 45, 0.3);
+}
+
+.local-video-item h3 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+/* ------------------ */
+/* 4. LIGHTBOX/MODAL (Mantido) */
+/* ------------------ */
+/* ... (Estilos do modal omitidos por brevidade, use o código anterior) */
+
+
+/* ------------------ */
+/* 5. RESPONSIVIDADE (Ajustada para o Grid de 3 colunas) */
+/* ------------------ */
+@media (max-width: 1200px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-logo-style {
+        max-width: 80%;
+    }
+    
+    .return-home {
+        display: none; 
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr; /* 1 coluna em mobile */
+        padding: 0 10px;
+    }
+    
+    .photo-item img {
+        height: 350px; /* Reduz altura da imagem no mobile */
+    }
+    
+    .local-video-item {
+        flex-basis: 100%; 
+    }
+}

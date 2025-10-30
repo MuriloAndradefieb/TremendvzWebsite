@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREMENDVZ - Mídia e Galeria Oficial</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="midia-page.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Oswald:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo-tremendvz.png" alt="Logo da Banda Tremendvz - Início" class="header-logo">
+            </a>
+        </div>
+        <nav id="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ep.html">EP "Gloria e Sangue"</a></li>
+                <li><a href="agenda.html">Agenda / Turnês</a></li>
+                <li><a href="biografia.html">A Banda / História</a></li>
+                <li><a href="midia.html" class="active">Mídia / Vídeos</a></li>
+                <li><a href="loja.html" class="nav-cta">Loja / Merch</a></li>
+                <li><a href="contato.html">Contato / Booking</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menu">☰</button> 
+    </header>
+
+    <main id="media-page" class="section dark">
+        
+        <div class="page-logo-container">
+            <a href="index.html" class="return-home">← RETURN HOME</a>
+            <img src="logo-tremendvz-grande.png" alt="Logo Tremendvz" class="page-logo-style">
+        </div>
+        
+        <h1 class="page-title">Galeria: Momentos de "Gloria e Sangue"</h1>
+        
+        <section class="gallery-section">
+            <div class="photo-grid">
+                
+                <div class="photo-item" data-img="img/show-1.jpg" data-desc="SHOW // PORTO ALEGRE, RS // NOVEMBRO 10, 2025">
+                    <img src="img/show-1-thumb.jpg" alt="Show ao vivo no palco">
+                    <p class="photo-caption">
+                        <span class="caption-icon"></span>PORTO ALEGRE, RS // NOVEMBRO 10, 2025
+                    </p>
+                </div>
+
+                <div class="photo-item" data-img="img/show-2.jpg" data-desc="BASTIDORES // CLIPAGEM // OUTUBRO 25, 2025">
+                    <img src="img/show-2-thumb.jpg" alt="DJ ou membro da banda em console">
+                    <p class="photo-caption">
+                        <span class="caption-icon"></span>BASTIDORES // CLIPAGEM // OUTUBRO 25, 2025
+                    </p>
+                </div>
+
+                <div class="photo-item" data-img="img/show-3.jpg" data-desc="SHOW // SÃO PAULO, SP // NOVEMBRO 14, 2025">
+                    <img src="img/show-3-thumb.jpg" alt="Membro da banda com cabelo esvoaçante">
+                    <p class="photo-caption">
+                        <span class="caption-icon"></span>SÃO PAULO, SP // NOVEMBRO 14, 2025
+                    </p>
+                </div>
+                
+                </div>
+            
+            <div class="load-more-container">
+                 <button class="btn secondary">Carregar Mais Fotos</button>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <h2 class="section-title">Videoclipes & Trechos Exclusivos</h2>
+            
+            <div class="local-video-grid">
+                <div class="local-video-item">
+                    <video controls poster="img/video-cover-1.jpg">
+                        <source src="video-clipe.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                    <h3>O Grito Final (Arquivo de Alta Qualidade)</h3>
+                </div>
+
+                <div class="local-video-item">
+                    <video controls poster="img/video-cover-2.jpg">
+                        <source src="show-trecho.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                    <h3>Live: Sangue no Altar (Trecho RAW)</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="lightbox-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <button class="modal-nav prev-img">&#10094;</button>
+        <img class="modal-content" id="modal-image" src="" alt="">
+        <button class="modal-nav next-img">&#10095;</button>
+        <div id="modal-caption"></div>
+    </div>
+
+    <footer class="footer dark">
+        <p>© 2025 TREMENDVZ. Todos os Direitos Reservados.</p>
+        <div class="social-links">
+            <a href="#">[Ícone Spotify]</a>
+            <a href="#">[Ícone YouTube]</a>
+            <a href="#">[Ícone Instagram]</a>
+        </div>
+        <a href="contato.html" class="contact-link">Contato e Booking</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="midia.js"></script> 
+</body>
+</html>

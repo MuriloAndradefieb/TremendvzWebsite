@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. FUNÇÃO DE NAVEGAÇÃO ---
     const showImage = (index) => {
+        // Navegação circular
         if (index < 0) {
             currentIndex = galleryItems.length - 1;
         } else if (index >= galleryItems.length) {
@@ -21,45 +22,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const currentItem = galleryItems[currentIndex];
         
+        // Usa o atributo data-img (grande) para a visualização no modal
         modalImg.src = currentItem.getAttribute('data-img');
+        // Usa o atributo data-desc (legenda longa) para a descrição
         captionText.innerHTML = currentItem.getAttribute('data-desc');
-        
-        // Exibir/Esconder botões de navegação se for o início/fim
-        // Embora tenhamos navegação circular (loop), podemos manter desabilitado se quisermos parar.
-        // nextButton.disabled = currentIndex === galleryItems.length - 1;
-        // prevButton.disabled = currentIndex === 0;
     };
     
     // --- 2. ABRIR MODAL ---
     galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             modal.style.display = "block";
+            // Adiciona a classe 'modal-open' ao body para evitar o scroll de fundo
+            document.body.classList.add('modal-open'); 
             showImage(index);
         });
     });
 
     // --- 3. FECHAR MODAL ---
-    closeModal.onclick = () => {
+    const closeLightbox = () => {
         modal.style.display = "none";
-    };
+        document.body.classList.remove('modal-open');
+    }
+    
+    closeModal.onclick = closeLightbox;
     
     // Fecha ao clicar fora da imagem
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.style.display = "none";
+            closeLightbox();
         }
     });
 
     // Fecha ao apertar ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === "Escape" && modal.style.display === "block") {
-            modal.style.display = "none";
+            closeLightbox();
         }
     });
 
     // --- 4. NAVEGAR MODAL ---
     prevButton.addEventListener('click', (e) => {
-        e.stopPropagation(); // Previne que o clique feche o modal
+        e.stopPropagation(); 
         showImage(currentIndex - 1);
     });
 
