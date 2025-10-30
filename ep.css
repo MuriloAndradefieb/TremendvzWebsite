@@ -1,0 +1,168 @@
+/* ========================================= */
+/* ESTILOS DA PÁGINA DETALHES DO EP (ep.html) */
+/* Este arquivo é específico para o conteúdo do EP "Gloria e Sangue" */
+/* ========================================= */
+
+/* Ajusta o padding para compensar o header fixo */
+#ep-detail-page {
+    padding-top: 120px; 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.ep-header-detail {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.ep-cover-art {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.ep-text-info h1 {
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.ep-text-info h2 {
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.release-date-ep {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.streaming-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.streaming-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 15px;
+    border-radius: 50px; /* Botão estilo pílula */
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s;
+}
+
+.streaming-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.spotify-btn {
+    background-color: #1DB954;
+    color: #fff;
+}
+
+.apple-btn {
+    background-color: #FA2C49;
+    color: #fff;
+}
+
+.deezer-btn {
+    background-color: #FEAA2D;
+    color: #000;
+}
+
+/* Faixas e Letras */
+.ep-player-section {
+    margin-bottom: 60px;
+}
+
+.centered-title {
+    text-align: center;
+    color: #ff0000;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+.tracklist {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tracklist li {
+    background-color: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-left: 5px solid #ff0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tracklist li h4 {
+    flex-basis: 30%;
+    margin: 0;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.lyrics-snippet {
+    flex-basis: 50%;
+    font-style: italic;
+    color: #ccc;
+    margin: 0;
+}
+
+.view-lyrics {
+    flex-basis: 15%;
+    text-align: right;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Responsividade para a página do EP */
+@media (max-width: 768px) {
+    .ep-header-detail {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ep-cover-art {
+        width: 80%;
+        height: auto;
+    }
+    
+    .ep-text-info {
+        padding-top: 20px;
+    }
+    
+    .streaming-btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+    
+    .tracklist li {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .tracklist li h4, .lyrics-snippet, .view-lyrics {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+}
