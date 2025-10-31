@@ -1,8 +1,15 @@
-/* Base Reset */
+/* Base Reset - ATUALIZADO */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Previne overflow horizontal */
+html {
+    overflow-x: hidden;
+    width: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,34 +17,45 @@ body {
     background-color: #0d0d0d;
     color: #f0f0f0;
     line-height: 1.6;
-    background-image: url(../img/Gloria_e_sangue_capa.png); /* Certifique-se de que este caminho está correto */
+    background-image: url(../img/Gloria_e_sangue_capa.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
 }
 
-/* Tipografia (Cores alteradas para Dourado: #fac72d) */
+/* Tipografia com tamanhos responsivos */
 h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 5rem;
-    letter-spacing: 0.3em;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: clamp(0.1em, 0.3em, 0.3em);
     color: #fff;
     text-shadow: 0 0 15px #fac72d;
+    word-wrap: break-word;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     color: #fac72d;
     margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
     margin-bottom: 30px;
     text-align: center;
 }
 
-/* Layout de Seções */
+/* Layout de Seções com padding responsivo */
 .section {
-    padding: 80px 5%;
+    padding: clamp(40px, 10vw, 80px) 5%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .dark {
@@ -51,7 +69,7 @@ h3 {
 }
 
 /* ========================================= */
-/* 1. ESTILOS DO HEADER (CABEÇALHO) - ATUALIZADO PARA IMAGEM */
+/* HEADER (CABEÇALHO) - MELHORADO */
 /* ========================================= */
 #main-header {
     background-color: rgba(0, 0, 0, 0.95);
@@ -62,25 +80,25 @@ h3 {
     align-items: center;
     position: fixed;
     width: 100%;
+    max-width: 100vw;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2); /* Sombra em vermelho sutil */
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
 }
 
 .logo a {
     text-decoration: none;
-    line-height: 0; 
+    line-height: 0;
     display: block;
 }
 
 .header-logo {
-    height: 90px; 
+    height: clamp(50px, 10vw, 90px);
     width: auto;
     display: block;
     transition: opacity 0.2s;
     opacity: 30%;
-
 }
 
 .header-logo:hover {
@@ -90,33 +108,35 @@ h3 {
 .nav-links {
     list-style: none;
     display: flex;
-    margin-left: 20px; 
+    margin-left: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .nav-links li {
-    margin-left: 25px;
+    margin-left: clamp(10px, 2vw, 25px);
 }
 
 .nav-links a {
     text-decoration: none;
     color: #ccc;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
     font-weight: 700;
     padding: 5px 0;
     transition: color 0.3s, border-bottom 0.3s;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: #fff;
-    border-bottom: 2px solid #fac72d; /* Destaque dourado */
+    border-bottom: 2px solid #fac72d;
 }
 
-/* Destaque para o CTA na navegação (Loja/Merch) */
 .nav-cta {
     background-color: #fac72d;
-    color: #0d0d0d !important; /* Texto escuro no fundo dourado */
+    color: #0d0d0d !important;
     padding: 8px 15px !important;
     border-radius: 4px;
     border-bottom: none !important;
@@ -124,22 +144,19 @@ h3 {
 }
 
 .nav-cta:hover {
-    background-color: #e3b72c; 
+    background-color: #e3b72c;
 }
 
-/* Esconde o botão do menu em desktop */
 .menu-toggle {
-    display: none; 
+    display: none;
 }
 
-/* Ajuste a seção HERO para não ser escondida pelo Header Fixo */
+/* ========================================= */
+/* SEÇÃO HERO - MELHORADA */
+/* ========================================= */
 #hero-ep {
-    padding-top: 80px; 
-}
-
-/* 1. SEÇÃO HERO (GLORIA E SANGUE) */
-#hero-ep {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,8 +164,11 @@ h3 {
     background-image: url('capa-ep-gloria-e-sangue.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    padding: clamp(80px, 15vh, 120px) 5%;
+    width: 100%;
 }
 
 .overlay {
@@ -163,6 +183,8 @@ h3 {
 .content-wrapper {
     z-index: 10;
     position: relative;
+    max-width: min(1200px, 90vw);
+    padding: 20px;
 }
 
 .ep-info {
@@ -170,28 +192,38 @@ h3 {
 }
 
 .ep-title {
-    font-size: 4rem;
+    font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 900;
     color: #fac72d;
-    line-height: 1;
+    line-height: 1.2;
+    word-wrap: break-word;
 }
 
 .release-date {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: #ccc;
     margin-top: 10px;
 }
 
-/* Botões CTA */
+/* Botões CTA - MELHORADOS */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
 .cta-buttons a {
     text-decoration: none;
-    padding: 15px 30px;
-    margin: 0 10px;
+    padding: clamp(12px, 2vw, 15px) clamp(20px, 4vw, 30px);
     font-weight: 700;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     text-transform: uppercase;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
     display: inline-block;
+    white-space: nowrap;
 }
 
 .btn.primary {
@@ -202,6 +234,7 @@ h3 {
 
 .btn.primary:hover {
     background-color: #e3b72c;
+    transform: translateY(-2px);
 }
 
 .btn.secondary {
@@ -213,11 +246,14 @@ h3 {
 .btn.secondary:hover {
     background-color: #fff;
     color: #0d0d0d;
+    transform: translateY(-2px);
 }
 
-/* 2. PLAYER DO SPOTIFY (NA HOME) */
+/* ========================================= */
+/* PLAYER DO SPOTIFY - MELHORADO */
+/* ========================================= */
 .spotify-player-wrapper {
-    max-width: 800px; 
+    max-width: min(800px, 95vw);
     margin: 0 auto;
     border: 3px solid #fac72d;
     border-radius: 8px;
@@ -226,51 +262,70 @@ h3 {
 
 .spotify-player-wrapper iframe {
     width: 100%;
-    min-height: 250px; 
+    min-height: clamp(200px, 40vw, 352px);
 }
 
-/* 3. NOTÍCIAS */
+/* ========================================= */
+/* NOTÍCIAS - MELHORADAS */
+/* ========================================= */
 .news-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: clamp(20px, 4vw, 30px);
+    max-width: min(1200px, 95vw);
     margin: 0 auto;
 }
 
 .news-grid article {
     background-color: #1a1a1a;
-    padding: 20px;
+    padding: clamp(15px, 3vw, 20px);
     border-left: 5px solid #fac72d;
+}
+
+.news-grid article h4 {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    margin-bottom: 10px;
+}
+
+.news-grid article p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .news-grid a {
     color: #fac72d;
     text-decoration: none;
     font-weight: 700;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-/* 4. FOOTER */
+/* ========================================= */
+/* FOOTER */
+/* ========================================= */
 .footer {
     text-align: center;
-    padding: 40px 5%;
+    padding: clamp(30px, 5vw, 40px) 5%;
     border-top: 1px solid #333;
     background-color: #0d0d0d;
 }
 
 .footer p {
     color: #ccc;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
 .social-links {
     margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: clamp(15px, 3vw, 30px);
+    flex-wrap: wrap;
 }
 
 .social-links a {
     color: #fff;
-    font-size: 1.5rem;
-    margin: 0 15px;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
 }
@@ -281,10 +336,9 @@ h3 {
 }
 
 /* ========================================= */
-/* 5. RESPONSIVIDADE GERAL */
+/* RESPONSIVIDADE GERAL */
 /* ========================================= */
 @media (max-width: 992px) {
-    /* RESPONSIVIDADE DO HEADER */
     .menu-toggle {
         display: block;
         background: none;
@@ -315,30 +369,59 @@ h3 {
         margin: 15px 0;
     }
 
-    /* RESPONSIVIDADE DO CORPO */
     .section {
-        padding: 50px 3%; 
+        padding: clamp(30px, 8vw, 50px) 3%;
     }
     
-    h1 {
-        font-size: 3rem;
-    }
-
-    .ep-title {
-        font-size: 2.5rem;
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
     .cta-buttons a {
-        display: block;
-        margin: 10px auto;
-        width: 80%;
+        width: min(80%, 300px);
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero-ep {
+        min-height: 80vh;
+        padding: 100px 5% 50px;
     }
 
-    .news-grid {
-        grid-template-columns: 1fr;
+    .ep-title {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+}
+
+/* Zoom específico - previne quebras */
+@media (min-width: 1400px) {
+    .section {
+        padding-left: max(5vw, 50px);
+        padding-right: max(5vw, 50px);
     }
     
-    .spotify-player-wrapper {
-        max-width: 95%;
+    .content-wrapper {
+        max-width: 1200px;
     }
+}
+
+/* Garante que nada quebre o layout em zoom out */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Containers principais */
+main,
+section,
+article {
+    max-width: 100vw;
+    overflow-x: hidden;
 }

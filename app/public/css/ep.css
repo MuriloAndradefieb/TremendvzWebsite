@@ -2,7 +2,305 @@
 /* ESTILOS DA PÁGINA DETALHES DO EP (ep.html) */
 /* Este arquivo é específico para o conteúdo do EP "Gloria e Sangue" */
 /* ========================================= */
+/* ========================================= */
+/* CORREÇÕES PARA ZOOM E RESPONSIVIDADE */
+/* ========================================= */
 
+/* Adicione estas regras ao topo do arquivo ep.css */
+
+/* Garante que o viewport seja respeitado */
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    line-height: 1.6;
+    background-image: url(https://www.baltana.com/files/wallpapers-16/Black-Background-Design-High-Definition-Wallpaper-40665.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* Mantém o background fixo */
+    background-size: cover;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Container principal mais flexível */
+#ep-detail-page {
+    padding-top: 120px;
+    max-width: min(1400px, 90vw); /* Usa o menor valor entre 1400px e 90% da viewport */
+    margin: 0 auto;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+/* Header com melhor comportamento no zoom */
+.ep-header-detail {
+    display: flex;
+    gap: clamp(20px, 4vw, 40px); /* Gap responsivo */
+    align-items: flex-start;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Permite quebra em telas menores */
+}
+
+/* Imagem da capa mais flexível */
+.ep-cover-art {
+    width: clamp(200px, 30vw, 300px); /* Tamanho responsivo */
+    height: clamp(200px, 30vw, 300px);
+    max-width: 100%;
+    object-fit: cover;
+    border: 5px solid #666665;
+    box-shadow: 0 0 20px #666665;
+    flex-shrink: 0;
+}
+
+/* Texto info mais flexível */
+.ep-text-info {
+    flex: 1;
+    min-width: min(300px, 100%); /* Garante largura mínima */
+}
+
+.ep-text-info h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Tamanho de fonte responsivo */
+    margin-top: 0;
+    word-wrap: break-word;
+}
+
+.ep-text-info h2 {
+    color: #f0f0f0;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 10px;
+}
+
+.ep-text-info p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+}
+
+/* Botões de streaming mais flexíveis */
+.streaming-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.streaming-links h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 15px;
+}
+
+.streaming-btn {
+    display: inline-block;
+    padding: clamp(8px, 1.5vw, 10px) clamp(15px, 3vw, 20px);
+    margin-right: 15px;
+    margin-bottom: 10px; /* Espaço para quando quebrar linha */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    transition: transform 0.2s;
+    white-space: nowrap;
+}
+
+/* Player section */
+.ep-player-section {
+    margin-bottom: 60px;
+}
+
+.centered-title {
+    text-align: center;
+    color: #c5c5c5;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+/* Player wrapper mais responsivo */
+.spotify-player-wrapper {
+    max-width: min(800px, 95vw);
+    margin: 0 auto;
+    border: 3px solid #fac72d;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.spotify-player-wrapper iframe {
+    width: 100%;
+    min-height: clamp(200px, 40vw, 352px); /* Altura responsiva */
+}
+
+/* Tracklist mais flexível */
+.tracklist {
+    list-style: none;
+    max-width: min(800px, 95vw);
+    margin: 0 auto;
+    padding: 0;
+}
+
+.tracklist li {
+    background-color: #1a1a1a;
+    padding: clamp(15px, 3vw, 20px);
+    margin-bottom: 10px;
+    border-left: 5px solid #fac72d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.tracklist li h4 {
+    flex-basis: clamp(100%, 30%, 30%);
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.lyrics-snippet {
+    flex: 1 1 auto;
+    font-style: italic;
+    color: #ccc;
+    margin: 0;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+.view-lyrics {
+    flex-shrink: 0;
+    text-align: right;
+    color: #fac72d;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+
+/* Melhorias no header fixo */
+#main-header {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #fff;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
+    max-width: 100vw; /* Evita overflow horizontal */
+}
+
+/* Logo mais responsiva */
+.header-logo {
+    height: clamp(50px, 10vw, 90px);
+    width: auto;
+    display: block;
+    transition: opacity 0.2s;
+    opacity: 30%;
+}
+
+/* Links de navegação */
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 700;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    text-transform: uppercase;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 1200px) {
+    .ep-header-detail {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ep-header-detail {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ep-cover-art {
+        width: min(80vw, 300px);
+        height: min(80vw, 300px);
+    }
+    
+    .ep-text-info {
+        padding-top: 20px;
+        width: 100%;
+    }
+    
+    .streaming-btn {
+        display: block;
+        margin: 10px auto;
+        width: min(80%, 300px);
+        text-align: center;
+    }
+    
+    .tracklist li {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .tracklist li h4, 
+    .lyrics-snippet, 
+    .view-lyrics {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    #ep-detail-page {
+        padding-top: 100px;
+    }
+    
+    .ep-text-info h1 {
+        font-size: 2rem;
+    }
+    
+    .centered-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Zoom específico - previne quebras em zoom out */
+@media (min-width: 1400px) {
+    #ep-detail-page {
+        padding-left: max(5vw, 50px);
+        padding-right: max(5vw, 50px);
+    }
+}
+
+/* Garante que imagens não quebrem o layout */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Previne scroll horizontal em qualquer zoom */
+* {
+    max-width: 100%;
+}
+
+/* Exceções para elementos que precisam de largura específica */
+#main-header,
+.overlay,
+body,
+html {
+    max-width: none;
+}
 /* Ajusta o padding para compensar o header fixo */
 body {
     font-family: 'Montserrat', sans-serif;
