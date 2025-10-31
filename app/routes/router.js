@@ -11,7 +11,7 @@ router.get("/ep", function (req, res) {
 });
 
 router.get("/galeria", function (req, res) {
-    res.render("/pages/galeria", {titulo:"Arquivos e fotos da banda"})
+    res.render("pages/galeria", {titulo:"Arquivos e fotos da banda"})
 });
 
 router.get("/perfil", function (req, res) {
@@ -45,18 +45,23 @@ router.get("/sobre", function (req, res) {
 router.get("/cadastro", function (req, res) {
     res.render("pages/cadastro", {titulo:"Cadastro para login"})
 });
+
 router.get("/pagamento-mensalidade", function (req, res) {
     res.render("pages/pagamento-mensalidade", {titulo:"Pagamento Mensalidade"})
 });
+
 router.get("/regulamento", function (req, res) {
     res.render("pages/regulamento", {titulo:"Regulamento"})
 });
+
 router.get("/pagamento", function (req, res) {
     res.render("pages/pagamento", {titulo:"Pagamento"})
 });
+
 router.get("/sair", function (req, res) {
     res.render("pages/sair", {titulo:"Sair da conta"})
 });
+
 router.get("/mensalidade", function (req, res) {
     res.render("pages/mensalidade", {titulo:"Sair da conta"})
 });
