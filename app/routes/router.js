@@ -14,12 +14,12 @@ router.get("/galeria", function (req, res) {
     res.render("pages/galeria", {titulo:"Arquivos e fotos da banda"})
 });
 
-router.get("/perfil", function (req, res) {
-    res.render("pages/perfil", {titulo:"Perfil do Usuario"})
+router.get("/biografia", function (req, res) {
+    res.render("pages/biografia", {titulo:"Biografia da banda"})
 });
 
-router.get("/login", function (req, res) {
-    res.render("pages/login", {titulo:"Login"})
+router.get("/contato", function (req, res) {
+    res.render("pages/contato", {titulo:"Pagina para contatos"})
 });
 
 router.get("/luthbox", function (req, res) {

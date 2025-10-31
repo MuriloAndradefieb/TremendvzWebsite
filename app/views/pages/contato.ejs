@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREMENDVZ - Contato, Booking e Imprensa</title>
+    
+    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/contato.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Oswald:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="logo">
+            <a href="/">
+                <img src="logo-tremendvz.png" alt="Logo da Banda Tremendvz - Início" class="header-logo">
+            </a>
+        </div>
+        <nav id="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/ep">EP "Gloria e Sangue"</a></li>
+                <li><a href="/agenda">Agenda / Turnês</a></li>
+                <li><a href="/biografia">A Banda / História</a></li>
+                <li><a href="/midia">Mídia / Vídeos</a></li>
+                <li><a href="/loja" class="nav-cta">Loja / Merch</a></li>
+                <li><a href="/contato" class="active">Contato / Booking</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menu">☰</button> 
+    </header>
+
+    <main id="contact-page" class="section dark">
+        
+        <h1 class="page-title">Fale Conosco | Booking e Imprensa</h1>
+        
+        <div class="contact-layout">
+            
+            <div class="contact-info-block">
+                <h2 class="section-title">Contatos Diretos</h2>
+                
+                <p class="intro-text">
+                    Use o formulário para fãs. Para consultas profissionais, use os e-mails abaixo.
+                </p>
+
+                <div class="info-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">🤘</span>
+                        <div>
+                            <h4>Booking de Shows (Agendamento)</h4>
+                            <p>Contrate TREMENDVZ para festivais e turnês:</p>
+                            <a href="mailto:tremedvz.contact@gmail.com" class="contact-link-email">booking@tremendvz.com.br</a>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <span class="detail-icon">📰</span>
+                        <div>
+                            <h4>Imprensa & Mídia</h4>
+                            <p>Solicitações de entrevistas, press kits e credenciais:</p>
+                            <a href="mailto:tremedvz.contact@gmail.com" class="contact-link-email">tremendvz.contact@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <span class="detail-icon">🛒</span>
+                        <div>
+                            <h4>Loja Oficial / Merchandising</h4>
+                            <p>Dúvidas sobre pedidos, estoque ou parcerias de merch:</p>
+                            <a href="mailto:merch@tremendvz.com.br" class="contact-link-email">merch@tremendvz.com.br</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-block">
+                <h2 class="section-title">Envie Sua Mensagem (Fãs / Geral)</h2>
+                
+                <form action="[SEU_ENDPOINT_DE_FORMULARIO]" method="POST" class="contact-form">
+                    
+                    <div class="form-group">
+                        <label for="name">Seu Nome Completo:</label>
+                        <input type="text" id="name" name="name" required placeholder="Seu Nome Aqui">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Seu E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Assunto:</label>
+                        <textarea id="message" name="message" required placeholder="Escreva seu assunto."> </textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Escreva sua mensagem aqui."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn primary form-submit-btn">Enviar Mensagem</button>
+                    
+                </form>
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <footer class="footer dark">
+        <p>© 2025 TREMENDVZ. Todos os Direitos Reservados.</p>
+        <div class="social-links">
+            <a href="#">[Ícone Spotify]</a>
+            <a href="#">[Ícone YouTube]</a>
+            <a href="#">[Ícone Instagram]</a>
+        </div>
+        <a href="contato.html" class="contact-link">Contato e Booking</a>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

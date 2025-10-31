@@ -1,0 +1,172 @@
+/* ========================================= */
+/* ESTILOS DA PÁGINA DE CONTATO (contato.html) */
+/* ========================================= */
+
+#contact-page {
+    /* O padding-top vem de .section no global-site.css */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #fac72d;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #fac72d;
+    margin-bottom: 30px;
+    text-align: left;
+    border-left: 5px solid #fac72d;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+/* ------------------ */
+/* 1. LAYOUT PRINCIPAL: GRID 2 COLUNAS */
+/* ------------------ */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info (menor) | Formulário (maior) */
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* ------------------ */
+/* 2. DETALHES DE CONTATO (Info Block) */
+/* ------------------ */
+.contact-info-block {
+    padding: 30px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.detail-icon {
+    font-size: 2rem;
+    color: #fac72d;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+.detail-item h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.detail-item p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.contact-link-email {
+    color: #fac72d;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.contact-link-email:hover {
+    color: #fff;
+}
+
+
+/* ------------------ */
+/* 3. ESTILOS DO FORMULÁRIO */
+/* ------------------ */
+.contact-form-block {
+    padding: 30px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #fac72d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #333;
+    background-color: #0d0d0d;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #fac72d; /* Destaque no foco */
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Estilo do botão de submit (usa a classe .btn.primary do global-site.css) */
+.form-submit-btn {
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+/* ------------------ */
+/* 4. RESPONSIVIDADE */
+/* ------------------ */
+@media (max-width: 992px) {
+    .contact-layout {
+        /* Empilha as colunas em telas menores */
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,263 @@
+/* ========================================= */
+/* ESTILOS DA PÁGINA DE BIOGRAFIA (biografia.html) - LAYOUT BLOCOS AGRESSIVOS */
+/* Design 100% Autônomo para o Conteúdo */
+/* ========================================= */
+
+#biography-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    color: #fff;
+    padding-bottom: 80px;
+    padding-top: 120px; /* Espaço para o header fixo */
+    /* Garante que o conteúdo comece de ponta a ponta, usando o padding do bloco */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* TÍTULOS DE PÁGINA E SEÇÃO */
+.page-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px #ff0000; 
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #fff; /* Títulos de seção brancos com fundo de bloco */
+    margin: 80px 0 50px 0;
+    text-align: left;
+    text-transform: uppercase;
+    padding-left: 5%; /* Alinha ao conteúdo */
+    border-left: 5px solid #ff0000;
+}
+
+/* ------------------ */
+/* 1. SEÇÃO DE INTRODUÇÃO E CITAÇÃO - Em Bloco Vermelho */
+/* ------------------ */
+.intro-section {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 5%;
+    background-color: #ff0000; /* Bloco de cor de destaque */
+    color: #0d0d0d;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
+}
+
+.bio-intro {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    font-weight: 500;
+    color: #0d0d0d;
+}
+
+.quote-highlight {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 700;
+    color: #fff; /* Destaque na citação */
+    border: none;
+    padding: 10px 20px;
+    margin: 30px auto 0 auto;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+
+/* ------------------ */
+/* 2. TIMELINE (HISTÓRIA) - Layout de Blocos */
+/* ------------------ */
+.timeline-section {
+    padding: 0 5%;
+}
+
+.timeline {
+    display: grid;
+    /* 2 colunas para Blocos de História */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    max-width: 100%;
+}
+
+.timeline-item {
+    /* Sem padding e position para remover o design de linha */
+    padding: 0;
+    position: static;
+    width: 100%;
+}
+
+.timeline-content {
+    padding: 30px;
+    background-color: #1a1a1a;
+    position: relative;
+    border-radius: 0;
+    border: 3px solid #fac72d; /* Borda de destaque */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(250, 199, 45, 0.4);
+}
+
+.timeline-content h3 {
+    color: #ff0000;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.timeline-year {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fac72d;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.timeline-content p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Remove todos os elementos visuais da antiga timeline (bolinhas, setas, linha central) */
+.timeline::after, 
+.timeline-item::after, 
+.timeline-content::before {
+    content: none !important;
+}
+
+/* Destaque (Bloco invertido) */
+.timeline-content.highlight {
+    background-color: #ff0000;
+    color: #0d0d0d;
+    border-color: #0d0d0d;
+}
+
+.timeline-content.highlight h3,
+.timeline-content.highlight .timeline-year {
+    color: #0d0d0d;
+}
+
+/* ------------------ */
+/* 3. MEMBROS DA BANDA (CARTÕES COM IMAGEM DE FUNDO) */
+/* ------------------ */
+.members-section {
+    padding: 0 5%;
+}
+
+.members-grid {
+    display: grid;
+    /* 4 colunas em desktop */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.member-card {
+    background-color: #0d0d0d;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    height: 400px; /* Altura fixa para impacto */
+    border: 2px solid #333;
+    cursor: pointer;
+}
+
+.member-photo {
+    /* Imagem como fundo do cartão */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.2) grayscale(100%); /* Fundo escuro P&B */
+    transition: filter 0.5s;
+}
+
+.member-card:hover .member-photo {
+    filter: brightness(0.6) grayscale(0%); /* Imagem forte ao passar o mouse */
+}
+
+.member-info {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha o texto na parte inferior */
+    text-align: left;
+    /* Sombra interna para garantir que o texto seja legível */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+.member-info h3 {
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    color: #fac72d;
+    margin-bottom: 5px;
+    line-height: 1.1;
+    text-shadow: 1px 1px #000;
+}
+
+.member-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff0000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s;
+}
+
+.member-card:hover .member-bio {
+    max-height: 150px; /* Revela a bio no hover */
+    opacity: 1;
+}
+
+
+/* ------------------ */
+/* 4. RESPONSIVIDADE */
+/* ------------------ */
+@media (max-width: 1100px) {
+    .timeline {
+        grid-template-columns: 1fr; /* 1 coluna para os Blocos de História em telas menores */
+    }
+    
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    .members-grid {
+        grid-template-columns: 1fr; /* 1 coluna em mobile */
+    }
+    .member-card {
+        height: 350px;
+    }
+}
