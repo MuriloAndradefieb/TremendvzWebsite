@@ -75,10 +75,12 @@ h3 {
 }
 
 .header-logo {
-    height: 50px; 
+    height: 90px; 
     width: auto;
     display: block;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
+    opacity: 30%;
+
 }
 
 .header-logo:hover {
@@ -251,8 +253,14 @@ h3 {
 /* 4. FOOTER */
 .footer {
     text-align: center;
-    padding: 30px 0;
+    padding: 40px 5%;
     border-top: 1px solid #333;
+    background-color: #0d0d0d;
+}
+
+.footer p {
+    color: #ccc;
+    font-size: 0.9rem;
 }
 
 .social-links {
@@ -262,8 +270,14 @@ h3 {
 .social-links a {
     color: #fff;
     font-size: 1.5rem;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social-links a:hover {
+    color: #fac72d;
+    text-shadow: 0 0 10px #fac72d;
 }
 
 /* ========================================= */

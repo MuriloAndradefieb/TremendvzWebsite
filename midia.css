@@ -1,209 +1,612 @@
-/* ========================================= */
-/* ESTILOS DA PÁGINA DE MÍDIA (midia.html) - ESTILO GALERIA IMPACTO V3 */
-/* ========================================= */
-
-#media-page {
-    padding-top: 100px;
-    max-width: 1400px;
-    margin: 0 auto;
-    text-align: center;
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* 1. LOGO E TÍTULO CENTRALIZADOS */
-.page-logo-container {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    position: relative;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    line-height: 1.6;
+    background-image: url(img/vintage-flourish-background-1409689815qsZ.jpg);
+}
+
+/* Tipografia */
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 0.3em;
+    color: #fff;
+    text-shadow: 0 0 15px #fac72d;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #fac72d;
+    margin-bottom: 20px;
+}
+
+/* ========================================= */
+/* HEADER (CABEÇALHO) */
+/* ========================================= */
+#main-header {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #fff;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
+}
+
+.logo a {
+    text-decoration: none;
+    line-height: 0;
+    display: block;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.header-logo:hover {
+    opacity: 0.8;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff;
+    border-bottom: 2px solid #fac72d;
+}
+
+.nav-cta {
+    background-color: #fac72d;
+    color: #0d0d0d !important;
+    padding: 8px 15px !important;
+    border-radius: 4px;
+    border-bottom: none !important;
+    margin-left: 10px;
+}
+
+.nav-cta:hover {
+    background-color: #e3b72c;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* ========================================= */
+/* GALERIA DE FOTOS */
+/* ========================================= */
+.gallery-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: #0d0d0d;
+}
+
+.gallery-header {
     text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 0.3em;
+    color: #fff;
+    text-shadow: 0 0 20px #fac72d, 0 0 30px #fac72d;
+    margin-bottom: 20px;
+}
+
+.gallery-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .return-home {
-    position: absolute;
-    top: 50px;
-    left: 5%;
-    color: #ff0000;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.8rem;
-    transition: opacity 0.3s;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-}
-
-.page-logo-style {
-    max-width: 400px; 
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    filter: drop-shadow(0 0 10px rgba(250, 199, 45, 0.5));
-}
-
-.page-title {
-    font-size: 2.5rem;
-    text-transform: uppercase;
+    position: fixed;
+    top: 80px;
+    left: 30px;
     color: #fac72d;
-    letter-spacing: 0.1em;
-    margin-top: 20px;
-    margin-bottom: 60px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 999;
+    transition: color 0.3s;
 }
 
-.section-title {
-    font-size: 2rem;
-    color: #fff;
-    border-bottom: 2px solid #333;
-    padding-bottom: 15px;
-    margin-bottom: 40px;
-    text-align: left;
+.return-home:hover {
+    color: #e3b72c;
+    text-shadow: 0 0 10px #fac72d;
 }
 
-/* ------------------ */
-/* 2. GRID DE FOTOS (ESTILO REFERÊNCIA) */
-/* ------------------ */
-.photo-grid {
+.gallery-container {
     display: grid;
-    /* 3 colunas fixas para impacto */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 15px;
-    margin-bottom: 40px;
-    padding: 0 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
 }
 
-.photo-item {
+.gallery-item {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    background-color: #000;
-    /* Remove a borda para deixar a imagem 'flutuar' */
-    border: none; 
-    transition: transform 0.3s;
+    border: 1px solid #1a1a1a;
 }
 
-.photo-item:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-.photo-item img {
+.gallery-item img {
     width: 100%;
-    height: 600px; /* IMAGENS AINDA MAIS ALTAS PARA MÁXIMO IMPACTO */
+    height: 600px;
     object-fit: cover;
     display: block;
-    filter: brightness(0.7); /* Escurece a imagem para destaque da legenda */
-    transition: filter 0.5s;
+    transition: transform 0.5s ease, filter 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
 }
 
-.photo-item:hover img {
-    filter: brightness(1); /* Clareia ao passar o mouse */
+.gallery-item img.loaded {
+    opacity: 1;
 }
 
-/* Legenda (Caption) - POSICIONADA DENTRO DA IMAGEM */
-.photo-caption {
+/* Loading Skeleton */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    z-index: 1;
+}
+
+.gallery-item.image-loaded::before {
+    display: none;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+}
+
+.gallery-info {
     position: absolute;
     bottom: 0;
     left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
+    padding: 50px 25px 25px 25px;
+    transition: background 0.3s;
+    z-index: 2;
+}
+
+.gallery-item:hover .gallery-info {
+    background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.8) 50%, transparent 100%);
+}
+
+.event-title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    color: #f0f0f0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.view-more {
+    background-color: #fac72d;
+    color: #0d0d0d;
+    border: none;
+    padding: 12px 30px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    cursor: pointer;
     width: 100%;
-    
-    /* Fundo da legenda */
-    background: rgba(0, 0, 0, 0.7); 
-    
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
+    transition: all 0.3s ease;
     text-transform: uppercase;
-    line-height: 1.5;
-    
-    /* Linha vermelha de destaque no topo (como na referência) */
-    border-top: 2px solid #ff0000; 
-    
-    /* Efeito sutil de brilho/sombra para destacar a legenda */
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5); 
+    font-family: 'Montserrat', sans-serif;
 }
 
-.caption-icon {
-    /* Ícone de Play ou destaque sutil à esquerda da legenda */
-    width: 0; 
+.view-more:hover {
+    background-color: #e3b72c;
+    box-shadow: 0 0 20px rgba(250, 199, 45, 0.6);
+    transform: translateY(-2px);
+}
+
+.play-icon {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 0;
     height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 8px solid #ff0000; /* Triângulo vermelho (Play) */
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 8px;
+    border-left: 18px solid #fac72d;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    filter: drop-shadow(0 0 8px rgba(250, 199, 45, 0.8));
+    z-index: 10;
+    transition: all 0.3s;
 }
 
-/* ------------------ */
-/* 3. VÍDEOS LOCAIS (Mantido) */
-/* ------------------ */
-.local-video-grid {
-    display: flex; 
-    gap: 40px;
-    margin-bottom: 40px;
-    flex-wrap: wrap; 
+.gallery-item:hover .play-icon {
+    filter: drop-shadow(0 0 15px rgba(250, 199, 45, 1));
+    transform: scale(1.2);
+}
+
+/* ========================================= */
+/* MODAL LIGHTBOX PARA FOTOS */
+/* ========================================= */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 3000;
     justify-content: center;
+    align-items: center;
 }
 
-.local-video-item {
-    text-align: center;
-    flex: 1 1 45%; 
-    min-width: 300px;
+.lightbox-modal.active {
+    display: flex;
 }
 
-.local-video-item video {
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-content img {
     width: 100%;
     height: auto;
-    max-height: 450px;
-    display: block;
-    border: 4px solid #fac72d;
-    box-shadow: 0 0 15px rgba(250, 199, 45, 0.3);
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 0 50px rgba(250, 199, 45, 0.3);
 }
 
-.local-video-item h3 {
-    font-size: 1.2rem;
-    margin-top: 15px;
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fac72d;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
     color: #fff;
-    text-align: center;
+    text-shadow: 0 0 20px #fac72d;
+    transform: rotate(90deg);
 }
 
-/* ------------------ */
-/* 4. LIGHTBOX/MODAL (Mantido) */
-/* ------------------ */
-/* ... (Estilos do modal omitidos por brevidade, use o código anterior) */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(250, 199, 45, 0.2);
+    border: 2px solid #fac72d;
+    color: #fac72d;
+    font-size: 2rem;
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
 
+.lightbox-nav:hover {
+    background-color: rgba(250, 199, 45, 0.4);
+    box-shadow: 0 0 20px rgba(250, 199, 45, 0.6);
+}
 
-/* ------------------ */
-/* 5. RESPONSIVIDADE (Ajustada para o Grid de 3 colunas) */
-/* ------------------ */
-@media (max-width: 1200px) {
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-info {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fac72d;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* ========================================= */
+/* MODAL GALERIA COMPLETA */
+/* ========================================= */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 80px 20px 40px;
+}
+
+.gallery-modal.active {
+    display: block;
+}
+
+.gallery-modal-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #fac72d;
+}
+
+.gallery-modal-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: #fac72d;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 15px #fac72d;
+}
+
+.gallery-modal-close {
+    background: none;
+    border: 2px solid #fac72d;
+    color: #fac72d;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.gallery-modal-close:hover {
+    background-color: #fac72d;
+    color: #0d0d0d;
+    box-shadow: 0 0 20px rgba(250, 199, 45, 0.6);
+}
+
+.gallery-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-modal-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #1a1a1a;
+    transition: all 0.3s;
+}
+
+.gallery-modal-item:hover {
+    border-color: #fac72d;
+    box-shadow: 0 0 20px rgba(250, 199, 45, 0.3);
+}
+
+/* Loading para imagens do modal */
+.gallery-modal-item {
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.modal-img-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    z-index: 1;
+}
+
+.lazy-modal-img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.loaded-modal-img {
+    opacity: 1;
+}
+
+.gallery-modal-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s, opacity 0.3s;
+    background-color: #1a1a1a;
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-modal-item:hover img {
+    transform: scale(1.1);
+}
+
+/* ========================================= */
+/* FOOTER */
+/* ========================================= */
+.footer {
+    text-align: center;
+    padding: 40px 5%;
+    border-top: 1px solid #333;
+    background-color: #0d0d0d;
+}
+
+.footer p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin: 15px 0;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social-links a:hover {
+    color: #fac72d;
+    text-shadow: 0 0 10px #fac72d;
+}
+
+/* ========================================= */
+/* RESPONSIVIDADE */
+/* ========================================= */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    #main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.98);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-title {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
-    .page-title {
-        font-size: 2rem;
+    .gallery-container {
+        grid-template-columns: 1fr;
     }
-    
-    .page-logo-style {
-        max-width: 80%;
+
+    .gallery-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.2em;
     }
-    
+
+    .gallery-item img {
+        height: 500px;
+    }
+
     .return-home {
-        display: none; 
+        top: 75px;
+        left: 20px;
+        font-size: 12px;
     }
-    
-    .photo-grid {
-        grid-template-columns: 1fr; /* 1 coluna em mobile */
-        padding: 0 10px;
+
+    .gallery-modal-title {
+        font-size: 1.5rem;
     }
-    
-    .photo-item img {
-        height: 350px; /* Reduz altura da imagem no mobile */
-    }
-    
-    .local-video-item {
-        flex-basis: 100%; 
+
+    .lightbox-nav {
+        font-size: 1.5rem;
+        padding: 15px 10px;
     }
 }
